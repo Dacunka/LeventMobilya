@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Levent Mobilya</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li style="float: left;"><h2>Levent Mobilya</h2></li>
+                <li class="button"><i class="fa-solid fa-phone"></i><a href="contact.html">İletişim</a></li>
+                <li class="button"><i class="fa-solid fa-circle-info"></i><a href="about.html">Hakkımızda</a></li>
+                <li class="button"><i class="fa-solid fa-house"></i><a href="index.html">Ana Sayfa</a></li>          
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="indexMain">
+            <div class="mainText" >
+                <h2>Levent Mobilya</h2>
+                <p>Levent Mobilya olarak, <strong>30 yılı aşkın süredir</strong> mutfak dolabından vestiyere, banyo dolabından yüklüğe kadar <strong>tüm ahşap işlerinizde yanınızdayız.</strong> Küçük atölyemizde başladığımız bu yolculukta, bugün hâlâ aynı özenle, aynı dürüstlükle işimizi yapıyoruz.
+                    <br/>
+                    <br/>
+                    <strong>Biz süslü laflar değil, sağlam işçilik ve güler yüzlü hizmet sunuyoruz.</strong> Ölçü alırız, size en uygun şekilde tasarlarız, malzemeden kısmadan, işçiliği eksiltmeden <strong>yıllarca kullanacağınız dolapları</strong> yerinize teslim ederiz.
+                    <br/>
+                    <br/>
+                    Her işi “nasıl olsa yapılır” diye değil, <strong>“kendi evimize yapıyormuşuz gibi”</strong> düşünerek yaparız. Ustamız Levent Bey, işin başından sonuna kadar işin içindedir.
+                    Mutfak yeniliyorsanız, yeni vestiyere ihtiyacınız varsa ya da evinizde küçük bir marangoz dokunuşu gerekiyorsa, bir çayımızı içmeye bekleriz.
+                </p>
+                </div>
+                <div class="mainImg"> 
+                    <img src="image/download.jpg" alt="Resim Yüklenemedi!">
+                    <img src="image/images.jpg" alt="Resim Yüklenemedi!">
+                    <img src="image/image1.jpg" alt="Resim Yüklenemedi!">
+                    <img src="image/image2.jpg" alt="Resim Yüklenemedi!">
+                </div>
+                <br>
+                <button class="btn"><a href="about.html">Bilgi İçin</a></button>
+                <button class="btn" id="contactBtn"><a href="contact.html">İletişim İçin</a></button>
+            </div>
+    </main>
+    <hr>
+    <h1 style="text-align: center; color: white;">Neden Biz?</h1>
+    <hr>
+
+    <section class="flex-container">
+        <div class="section1">
+            <h3 style="text-align: center;"><i class="fa-solid fa-hammer" style="padding-right: 5px;"></i>30+ Yıllık Deneyim</h3>
+            <p style="padding-top: 10px;">Uzun yıllardır süregelen marangozluk geleneğiyle, ahşaba hayat veriyoruz. El işçiliğiyle harmanladığımız tecrübemizle, her detayı özenle işliyor; sağlamlık ve estetiği buluşturuyoruz. Mobilyadan kişiye özel tasarımlara kadar, 30 yılı aşan ustalığımızla hizmet sunuyor, müşterilerimize güvenilir çözümler üretmeye devam ediyoruz.</p>
+        </div>
+        <div class="section2">
+            <h3 style="text-align: center;"><i class="fa-solid fa-handshake" style="padding-right: 5px;"></i>Güvenilirlik</h3>
+            <p style="padding-top: 10px;">Her işimizde verdiğimiz sözleri tutar, zamanında teslimat ve kaliteli işçilikle güveninizi kazanırız. Süreç boyunca sizi düzenli bilgilendirir, ihtiyaçlarınıza en uygun çözümleri sunarız. Kaliteli malzeme, deneyim ve dürüstlük sayesinde bizi tercih edenlerle uzun süreli iş birlikleri kurarız.</p>
+        </div>
+        <div class="section3">
+            <div id="counter-container" style="font-size: 20px; font-weight: bold; text-align: center; padding-top: 15px;">
+  <span id="counter">1</span>+ Sayısız Müşteri Memnuniyeti
+</div>
+  <p style="padding-top: 25px;">Yüzlerce müşterimizin hayalini gerçeğe dönüştürdük. Beklentileri aşmayı, sağlamlık ve estetiği bir araya getirmeyi ilke edindik. Her projede özenle çalıştık. Müşteri memnuniyetini odağımıza aldık. Bizi tercih edenlerin çoğu, tekrar bizimle çalışmayı tercih etti ve çevresine tavsiye etti.</p>
+<script>
+  const counterEl = document.getElementById('counter');
+  const containerEl = document.getElementById('counter-container');
+  let hasStarted = false;
+
+  function animateCount(start, end, duration) {
+    let startTime = null;
+
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      const progress = timestamp - startTime;
+      const current = Math.min(Math.floor(start + (end - start) * (progress / duration)), end);
+      counterEl.textContent = current;
+      if (current < end) {
+        requestAnimationFrame(step);
+      }
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top <= window.innerHeight &&
+      rect.bottom >= 0
+    );
+  }
+
+  function onScroll() {
+    if (!hasStarted && isInViewport(containerEl)) {
+      hasStarted = true;
+      animateCount(1, 1000, 2000);
+    }
+  }
+
+  window.addEventListener('scroll', onScroll);
+  window.addEventListener('load', onScroll);
+</script>
+        </div>
+    </section>
+
+    <footer>
+      <div class="footer">
+        <div class="footer1">
+          <h4 style="text-align: center;">Levent Mobilya</h4>
+          <p style="margin-top: -5px;">30 yıldan fazla deneyim, sayısız müşteri memnuniyeti, kaliteli işçiliği ve öne çıkan güvenirliği ile evinize renk katıyoruz.</p>
+        </div>
+        <div class="footer2">
+          <h4 style="text-align: center;">Menü</h4>
+          <ul style="margin-right: 35px; margin-top: -5px;">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="about.html">Hakkımızda</a></li>
+            <li><a href="contact.html">İletişim</a></li>
+          </ul>
+        </div>
+        <div class="footer3">
+          <h4 style="text-align: center;">İletişim</h4>
+          <ul style="margin-right: 35px; margin-top: -5px;">
+            <li><i class="fa-solid fa-location-dot" style="padding-right: 5px;"></i><a href="https://maps.app.goo.gl/aqymTpxToqVYMSNz6" target="_blank">Küçük Çiğli, 8753. Sk. 10 A, 35610 Aosb/Çiğli/İzmir</a></li>
+            <li><i class="fa-brands fa-whatsapp" style="padding-right: 5px;"></i><a href="https://wa.me/905072788725?text=Merhaba,%20web%20sitenizden%20ulaşıyorum." target="_blank">Whattsap</a></li>
+            <li><i class="fa-brands fa-instagram" style="padding-right: 5px;"></i><a href="https://www.instagram.com/levent.ozkul35/?utm_source=ig_web_button_share_sheet" target="_blank">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+</body>
+</html>

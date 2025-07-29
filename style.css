@@ -1,0 +1,191 @@
+/**Ortak Alan**/
+
+body {
+    font-family: "Oswald", sans-serif;
+    background: linear-gradient(to bottom, #3C2F2F, #2E2E2E);
+    margin: 0;
+    padding: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    background-color: #4A3B3B;
+    max-width: 100%;
+    color: white;
+    height: 80px;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+}
+
+nav ul li {
+    display: block;
+    float: right; 
+}
+
+.button {
+    text-align: center;
+    padding: 28px;
+}
+
+
+.button:hover {
+    background-color: grey;
+    transition: 0.5s;
+}
+
+/**ChatGPT**/
+@media (max-width: 750px) {
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav ul li {
+    float: none;
+    width: 100%;
+    text-align: left;
+  }
+
+  nav ul li h2 {
+    padding: 15px 20px;
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .button {
+    padding: 15px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    display: flex;
+    align-items: center;   /* İkon ve metni dikey ortalar */
+    gap: 10px;             /* İkonla yazı arasında boşluk */
+  }
+
+  nav ul a {
+    display: inline-block;
+    width: auto;
+    padding: 0;
+  }
+
+  .button i {
+    font-size: 16px;
+  }
+}
+
+/**ChatGPT**/
+
+.footer {
+    background-color: #422F2A;
+    max-width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 75px;
+}
+
+.footer1, .footer2, .footer3 {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-width: 250px;
+    max-width: 300px;
+    text-align: center;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+footer li {
+    list-style-type: none;
+}
+
+/**İndex**/
+
+.indexMain {
+    color: white;
+    background-color: #4A3B3B;
+    margin: 75px;
+    max-width: 100%;
+    max-height: 50%;
+    border-radius: 10px;
+    padding: 75px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.mainImg {
+    display: inline-block;
+    max-width: 35% ;
+    margin-left: 150px;
+    grid-column: auto;
+}
+
+.mainImg img{
+    max-width: 210px;
+    max-height: 210px;
+}
+
+.mainText{
+    max-width: 50%;
+    display: inline-block;
+}
+
+.btn {
+    padding: 5px 12px;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    margin-top: 25px;
+    background-color: #7C4F35;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#contactBtn {
+    margin-left: 10px;
+}
+
+.btn a {
+    text-decoration: none;
+    color: white;
+}
+
+.btn:hover{
+    cursor: pointer;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    gap: 75px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.section1, .section2, .section3 {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    background-color: #4A3B3B;
+    color: white;
+    padding: 15px;
+    border-radius: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+}
+
+/**About**/
+
+
