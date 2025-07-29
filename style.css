@@ -7,77 +7,76 @@ body {
     padding: 0;
 }
 
+nav {
+  background-color: #4A3B3B;
+  color: white;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+nav .logo {
+  font-size: 22px;
+  margin: 0;
+}
+
+/* Menü genel */
 nav ul {
-    list-style-type: none;
-    background-color: #4A3B3B;
-    max-width: 100%;
-    color: white;
-    height: 80px;
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
-nav ul a {
-    text-decoration: none;
-    color: white;
-    padding: 5px;
-}
-
+/* Butonlar (masaüstü) */
 nav ul li {
-    display: block;
-    float: right; 
+  float: right;
 }
 
-.button {
-    text-align: center;
-    padding: 28px;
+nav ul li a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: white;
+  padding: 28px;
 }
 
-
-.button:hover {
-    background-color: grey;
-    transition: 0.5s;
+nav ul li a:hover {
+  background-color: grey;
+  transition: 0.3s;
 }
 
-/**ChatGPT**/
+/* === Responsive === */
 @media (max-width: 750px) {
-  nav ul {
-    display: flex;
+  nav {
     flex-direction: column;
+    align-items: flex-start;
     height: auto;
-    padding: 0;
-    margin: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
   }
 
   nav ul li {
-    float: none;
     width: 100%;
-    text-align: left;
   }
 
-  nav ul li h2 {
+  nav ul li a {
     padding: 15px 20px;
-    font-size: 20px;
-    margin: 0;
   }
 
-  .button {
+  nav .logo {
     padding: 15px 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-
-    display: flex;
-    align-items: center;   /* İkon ve metni dikey ortalar */
-    gap: 10px;             /* İkonla yazı arasında boşluk */
-  }
-
-  nav ul a {
-    display: inline-block;
-    width: auto;
-    padding: 0;
-  }
-
-  .button i {
-    font-size: 16px;
   }
 }
+
 
 /**ChatGPT**/
 
