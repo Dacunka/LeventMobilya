@@ -23,7 +23,6 @@ nav .logo {
   margin: 0;
 }
 
-/* Menü genel */
 nav ul {
   list-style-type: none;
   display: flex;
@@ -32,7 +31,6 @@ nav ul {
   height: 100%;
 }
 
-/* Butonlar (masaüstü) */
 nav ul li {
   float: right;
 }
@@ -51,7 +49,6 @@ nav ul li a:hover {
   transition: 0.3s;
 }
 
-/* === Responsive === */
 @media (max-width: 750px) {
   nav {
     flex-direction: column;
@@ -76,9 +73,6 @@ nav ul li a:hover {
     padding: 15px 20px;
   }
 }
-
-
-/**ChatGPT**/
 
 .footer {
     background-color: #422F2A;
@@ -112,63 +106,21 @@ footer li {
 
 /**İndex**/
 
-.indexMain {
-    color: white;
-    background-color: #4A3B3B;
-    margin: 75px;
-    max-width: 100%;
-    max-height: 50%;
-    border-radius: 10px;
-    padding: 75px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-}
-
-.mainImg {
-    display: inline-block;
-    max-width: 35% ;
-    margin-left: 150px;
-    grid-column: auto;
-}
-
-.mainImg img{
-    max-width: 210px;
-    max-height: 210px;
-}
-
-.mainText{
-    max-width: 50%;
-    display: inline-block;
-}
-
-.btn {
-    padding: 5px 12px;
-    font-weight: bold;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    margin-top: 25px;
-    background-color: #7C4F35;
-    text-decoration: none;
-    display: inline-block;
-}
-
-#contactBtn {
-    margin-left: 10px;
-}
-
-.btn a {
-    text-decoration: none;
-    color: white;
-}
-
-.btn:hover{
-    cursor: pointer;
+.main {
+  background-color: #4A3B3B;
+  color: white;
+  margin: 75px;
+  padding: 75px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .flex-container {
     display: flex;
     justify-content: center;
     gap: 75px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 75px;
+    margin-bottom: 75px;
     flex-wrap: wrap;
 }
 
