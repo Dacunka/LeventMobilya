@@ -115,6 +115,16 @@ footer li {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
+@media (max-width: 750px) {
+  .main {
+    margin-bottom: 75px;
+    margin-top: 75px;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding: 25px;
+  }
+}
+
 .flex-container {
     display: flex;
     justify-content: center;
