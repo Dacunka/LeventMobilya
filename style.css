@@ -150,3 +150,72 @@ footer li {
 /**About**/
 
 
+/**Contact**/
+
+.contactSection {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  flex-wrap: wrap;
+  margin-top: 75px;
+  margin-bottom: 75px;
+}
+
+.contact {
+  color: white;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 250px;
+  max-width: 400px;
+  background-color: #4A3B3B;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+
+.contact a {
+  text-decoration: none;
+  color: white;
+}
+
+.contact ul li {
+  list-style-type: none;
+}
+
+input[type=text] {
+  background-color: #4A3B3B;
+  border-bottom: 2px solid #422F2A;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: white;
+}
+
+input[type=email] {
+  background-color: #4A3B3B;
+  border-bottom: 2px solid #422F2A;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: white;
+}
+
+select {
+  background-color: #4A3B3B;
+  border-bottom: 2px solid #422F2A;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: white;
+}
+
+textarea {
+  background-color: #4A3B3B;
+  border: 2px solid #422F2A;
+  color: white;
+}
+
+input[type=submit] {
+  background-color: #4A3B3B;
+  color: white;
+}
