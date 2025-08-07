@@ -171,6 +171,13 @@ footer li {
   background-color: #4A3B3B;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
+  padding-top: 35px;
+}
+
+@media (max-width:700px) {
+  .contact {
+    padding-bottom: 35px;
+  }
 }
 
 .contact a {
@@ -180,6 +187,10 @@ footer li {
 
 .contact ul li {
   list-style-type: none;
+}
+
+#contactForm {
+  margin-left: 35px;
 }
 
 input[type=text] {
@@ -202,20 +213,28 @@ input[type=email] {
 
 select {
   background-color: #4A3B3B;
-  border-bottom: 2px solid #422F2A;
-  border-top: none;
-  border-left: none;
-  border-right: none;
+  border: 2px solid #422F2A;
   color: white;
+  border-radius: 5px;
 }
 
 textarea {
   background-color: #4A3B3B;
   border: 2px solid #422F2A;
   color: white;
+  resize: none;
+  border-radius: 5px;
 }
 
 input[type=submit] {
-  background-color: #4A3B3B;
+  background-color: cadetblue;
   color: white;
+  border: 2px solid cadetblue;
+  border-radius: 5px;
+  padding: 5px 24px;
+  margin-bottom: 35px;
+}
+
+input[type=submit]:hover {
+  cursor: pointer;
 }
