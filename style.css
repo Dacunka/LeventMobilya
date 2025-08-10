@@ -1,78 +1,93 @@
 /**Ortak Alan**/
 
-body {
-    font-family: "Oswald", sans-serif;
-    background: linear-gradient(to bottom, #3C2F2F, #2E2E2E);
-    margin: 0;
-    padding: 0;
+:root{
+  --bg:#4A3B3B; --bg-hover:grey; --txt:#fff; --t:300ms ease;
+  --bar-h-desktop:80px; --bar-h-mobile:64px;
 }
 
-nav {
-  background-color: #4A3B3B;
-  color: white;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 0 20px;
+/* Genel */
+body{
+  font-family:"Oswald",sans-serif;
+  background:linear-gradient(to bottom,#3C2F2F,#2E2E2E);
+  margin:0;
 }
 
-nav .logo {
-  font-size: 22px;
-  margin: 0;
+.nav{
+  background:var(--bg); color:var(--txt);
+  height:var(--bar-h-desktop);
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 20px; position:relative; z-index:1000;
 }
 
-nav ul {
-  list-style-type: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-  height: 100%;
+.logo{font-size:22px; margin:0; line-height:1;}
+
+.nav-list{
+  list-style:none; display:flex; margin:0; padding:0; height:100%;
 }
 
-nav ul li {
-  float: right;
+.nav-list li a{
+  display:flex; align-items:center; gap:8px;
+  text-decoration:none; color:var(--txt); padding:28px;
 }
 
-nav ul li a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  color: white;
-  padding: 28px;
+.nav-list li a:hover{ background:var(--bg-hover); transition:var(--t); }
+.nav-list li{ float:none !important; } /* Eski float'ları kesin */
+
+.nav-toggle{
+  display:none; position:relative; width:42px; height:42px; border:0; background:transparent; cursor:pointer;
+}
+.nav-toggle .line{
+  position:absolute; left:8px; right:8px; height:2px; background:var(--txt);
+  transition:transform var(--t),opacity var(--t),top var(--t);
+}
+.nav-toggle .line:nth-child(1){ top:12px; }
+.nav-toggle .line:nth-child(2){ top:20px; }
+.nav-toggle .line:nth-child(3){ top:28px; }
+
+.menu-overlay{
+  position:fixed; inset:0;
+  background:rgba(0,0,0,.5);
+  opacity:0; pointer-events:none;
+  transition:opacity var(--t);
+  z-index:900; 
 }
 
-nav ul li a:hover {
-  background-color: grey;
-  transition: 0.3s;
+.nav.nav--open ~ .menu-overlay{
+  opacity:1; pointer-events:auto;
 }
 
-@media (max-width: 750px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-    height: auto;
+@media (max-width:700px){
+  .nav{ height:var(--bar-h-mobile); padding:0 16px; }
+  .logo{ font-size:22px; }             
+  .nav-toggle{ display:inline-block; margin-left:auto; align-self:center; }
+
+  .nav-list{
+    position:absolute; left:0; right:0; top:var(--bar-h-mobile);
+    display:block; width:100%; background:var(--bg);
+    border-top:1px solid rgba(255,255,255,0.08);
+    overflow:hidden;
+
+    height:0; opacity:0; pointer-events:none;
+    transition:height var(--t), opacity var(--t);
+    z-index:1100; 
+  }
+  .nav-list li a{ display:block; padding:14px 20px; }
+
+  .nav.nav--open .nav-list{
+    max-height: calc(100vh - var(--bar-h-mobile));
+    overflow:auto;
   }
 
-  nav ul {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  nav ul li {
-    width: 100%;
-  }
-
-  nav ul li a {
-    padding: 15px 20px;
-  }
-
-  nav .logo {
-    padding: 15px 20px;
-  }
+  .nav.nav--open .nav-toggle .line:nth-child(1){ transform:rotate(45deg); top:20px; }
+  .nav.nav--open .nav-toggle .line:nth-child(2){ opacity:0; }
+  .nav.nav--open .nav-toggle .line:nth-child(3){ transform:rotate(-45deg); top:20px; }
 }
+
+@media (prefers-reduced-motion:reduce){
+  *{ transition:none !important; }
+}
+
+
 
 .footer {
     background-color: #422F2A;
@@ -195,7 +210,7 @@ footer li {
   padding-top: 35px;
 }
 
-.contact ul li {
+.contact ul li a{
   font-weight: 500;
   color: antiquewhite;
   text-decoration: underline;

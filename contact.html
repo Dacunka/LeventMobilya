@@ -12,24 +12,130 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 <body>
-<header>
-  <nav>
+<header class="site-header">
+  <nav class="nav">
     <h2 class="logo">Levent Mobilya</h2>
-    <ul>
-      <li class="button">
-        <a href="index.html"><i class="fa-solid fa-house"></i> Ana Sayfa</a>
-      </li>
 
-      <li class="button">
-        <a href="about.html"><i class="fa-solid fa-circle-info"></i> Hakkımızda</a>
-      </li>
+    <button class="nav-toggle" aria-label="Menüyü aç/kapat" aria-expanded="false" aria-controls="primary-menu">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+    </button>
 
-      <li class="button">
-        <a href="contact.html"><i class="fa-solid fa-phone"></i> İletişim</a>
-      </li>     
+    <ul id="primary-menu" class="nav-list">
+      <li class="button"><a href="index.html"><i class="fa-solid fa-house"></i> Ana Sayfa</a></li>
+      <li class="button"><a href="about.html"><i class="fa-solid fa-circle-info"></i> Hakkımızda</a></li>
+      <li class="button"><a href="contact.html"><i class="fa-solid fa-phone"></i> İletişim</a></li>
     </ul>
   </nav>
+
+  <div class="menu-overlay"></div>
 </header>
+
+<script>
+(function(){
+  const nav     = document.querySelector('.nav');
+  const toggle  = document.querySelector('.nav-toggle');
+  const menu    = document.getElementById('primary-menu');
+  const overlay = document.querySelector('.menu-overlay');
+  if(!nav || !toggle || !menu || !overlay) return;
+
+  const mq = window.matchMedia('(max-width:700px)');
+  const isMobile = () => mq.matches;
+
+  // ——— yardımcılar ———
+  function lockScroll(){ document.body.style.overflow = 'hidden'; }
+  function unlockScroll(){ document.body.style.overflow = ''; }
+
+  function applyMobileClosed(){
+    if(!isMobile()) return;
+    menu.style.height = '0px';
+    menu.style.opacity = '0';
+    menu.style.pointerEvents = 'none';
+    nav.classList.remove('nav--open');
+    toggle.setAttribute('aria-expanded','false');
+    unlockScroll();
+  }
+
+  function applyMobileOpen(){
+    if(!isMobile()) return;
+
+    menu.style.height = menu.scrollHeight + 'px';
+    menu.style.opacity = '1';
+    menu.style.pointerEvents = 'auto';
+    nav.classList.add('nav--open');
+    toggle.setAttribute('aria-expanded','true');
+    lockScroll();
+  }
+
+  function clearInlineForDesktop(){
+
+    menu.style.height = '';
+    menu.style.opacity = '';
+    menu.style.pointerEvents = '';
+    nav.classList.remove('nav--open');
+    toggle.setAttribute('aria-expanded','false');
+    unlockScroll();
+  }
+
+  function initState(){
+    if(isMobile()){
+      applyMobileClosed();
+    }else{
+      clearInlineForDesktop();
+    }
+  }
+
+  toggle.addEventListener('click', function(){
+    if(!isMobile()) return;
+    const open = nav.classList.contains('nav--open');
+    if(open){ applyMobileClosed(); } else { applyMobileOpen(); }
+  });
+
+  menu.addEventListener('click', function(e){
+    if(isMobile() && e.target.closest('a')) applyMobileClosed();
+  });
+
+  overlay.addEventListener('click', function(){
+    if(isMobile() && nav.classList.contains('nav--open')) applyMobileClosed();
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && isMobile() && nav.classList.contains('nav--open')){
+      applyMobileClosed();
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    if(!isMobile()) return;
+    if(!nav.contains(e.target) && nav.classList.contains('nav--open')){
+      applyMobileClosed();
+    }
+  });
+
+  const mqHandler = function(e){
+    if(e.matches){ 
+      applyMobileClosed();
+    }else{         
+      clearInlineForDesktop();
+    }
+  };
+  if(mq.addEventListener) mq.addEventListener('change', mqHandler);
+  else if(mq.addListener) mq.addListener(mqHandler);
+
+  const ro = new ResizeObserver(() => {
+    if(isMobile() && nav.classList.contains('nav--open')){
+      menu.style.height = menu.scrollHeight + 'px';
+    }
+  });
+  ro.observe(menu);
+
+  initState();
+})();
+</script>
+
+
+
 
   <section class="contactSection">
     <div class="contact">
