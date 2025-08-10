@@ -31,7 +31,7 @@ body{
 }
 
 .nav-list li a:hover{ background:var(--bg-hover); transition:var(--t); }
-.nav-list li{ float:none !important; } /* Eski float'ları kesin */
+.nav-list li{ float:none !important; } 
 
 .nav-toggle{
   display:none; position:relative; width:42px; height:42px; border:0; background:transparent; cursor:pointer;
@@ -185,6 +185,14 @@ footer li {
 
 /**About**/
 
+.aboutMain {
+  background-color: #4A3B3B;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  color: white;
+  margin: 75px;
+  padding: 75px;
+}
 
 /**Contact**/
 
@@ -202,7 +210,7 @@ footer li {
   display: flex;
   flex: 1;
   flex-direction: column;
-  min-width: 250px;
+  min-width: 300px;
   max-width: 400px;
   background-color: #4A3B3B;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
@@ -225,6 +233,7 @@ footer li {
 @media (max-width:700px) {
   .contact {
     padding-bottom: 35px;
+    max-width: 325px;
   }
 }
 
@@ -248,6 +257,8 @@ input[type=text] {
   border-left: none;
   border-right: none;
   color: white;
+  outline: none;
+  border-radius: 3px;
 }
 
 input[type=email] {
@@ -257,6 +268,8 @@ input[type=email] {
   border-left: none;
   border-right: none;
   color: white;
+  outline: none;
+  border-radius: 3px;
 }
 
 select {
@@ -264,6 +277,8 @@ select {
   border: 2px solid #422F2A;
   color: white;
   border-radius: 5px;
+  outline: none;
+  padding: 5px;
 }
 
 textarea {
@@ -272,6 +287,7 @@ textarea {
   color: white;
   resize: none;
   border-radius: 5px;
+  outline: none;
 }
 
 input[type=submit] {
@@ -281,6 +297,7 @@ input[type=submit] {
   border-radius: 5px;
   padding: 5px 24px;
   margin-bottom: 35px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 input[type=submit]:hover {
