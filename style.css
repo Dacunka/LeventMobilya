@@ -95,6 +95,27 @@ nav ul li a:hover {
     margin-bottom: 10px;
 }
 
+.footer3 ul li {
+  font-weight: 500;
+  padding: 3px;
+  color: antiquewhite ;
+}
+
+.footer3 ul li a {
+  color: antiquewhite ;
+}
+
+.footer3 ul li:hover {
+  color: white;
+  font-size: large;
+  transition: 0.5s;
+}
+
+.footer3 ul li a:hover {
+  color: white;
+  transition: 0.5s;
+}
+
 footer a {
     text-decoration: none;
     color: white;
@@ -172,6 +193,18 @@ footer li {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
   padding-top: 35px;
+}
+
+.contact ul li {
+  font-weight: 500;
+  color: antiquewhite;
+  text-decoration: underline;
+}
+
+.contact ul li:hover {
+  font-size: large;
+  color: white;
+  transition: 0.5s;
 }
 
 @media (max-width:700px) {
