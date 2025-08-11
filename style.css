@@ -238,7 +238,7 @@ img {
   background-color: #4A3B3B;
   color: white;
   margin: 25px 75px 75px 75px;
-  padding: 75px;
+  padding: 50px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
@@ -251,6 +251,43 @@ img {
     margin-right: 25px;
     padding: 25px;
   }
+}
+
+.indexBtn {
+  padding: 10px 24px;
+  color: white;
+  background-color: #422F2A;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.indexBtn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.indexBtn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.indexBtn:hover span {
+  padding-right: 25px;
+}
+
+.indexBtn:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 
 .flex-container {
