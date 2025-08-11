@@ -237,7 +237,7 @@ img {
 .main {
   background-color: #4A3B3B;
   color: white;
-  margin: 75px;
+  margin: 25px 75px 75px 75px;
   padding: 75px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
@@ -246,7 +246,7 @@ img {
 @media (max-width: 750px) {
   .main {
     margin-bottom: 75px;
-    margin-top: 75px;
+    margin-top: 25px;
     margin-left: 25px;
     margin-right: 25px;
     padding: 25px;
