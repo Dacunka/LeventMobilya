@@ -14,7 +14,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 <body>
-<header class="site-header">
   <nav class="nav">
     <h2 class="logo">Levent Mobilya</h2>
 
@@ -32,7 +31,6 @@
   </nav>
 
   <div class="menu-overlay"></div>
-</header>
 
 <script>
 (function(){
@@ -135,6 +133,128 @@
   initState();
 })();
 </script>
+
+    <header>
+      <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <div class="numbertext">1/5</div>
+          <img src="img/slide_1.webp" alt="Resim Yüklenemedi!">
+          <div class="text">Levent Mobilya Kalitesiyle...</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">2/5</div>
+          <img src="img/slide_2.webp" alt="Resim Yüklenemedi!">
+          <div class="text">Levent Mobilya Kalitesiyle...</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">3/5</div>
+          <img src="img/slide_3.webp" alt="Resim Yüklenemedi!">
+          <div class="text">Levent Mobilya Kalitesiyle...</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">4/5</div>
+          <img src="img/slide_4.webp" alt="Resim Yüklenemedi!">
+          <div class="text">Levent Mobilya Kalitesiyle...</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">5/5</div>
+          <img src="img/slide_5.webp" alt="Resim Yüklenemedi!">
+          <div class="text">Levent Mobilya Kalitesiyle...</div>
+        </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+      </div>
+    </header>
+    
+    <script>
+    let slideIndex = 1;
+let autoplayInterval = null;     // setInterval referansı
+const AUTOPLAY_MS = 3000;        // geçiş süresi (ms)
+
+// İlk slaytı göster
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+  restartAutoplay();             // manuel tıklamada süreyi sıfırla
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+  restartAutoplay();
+}
+
+function showSlides(n) {
+  let i;
+  const slides = document.getElementsByClassName("mySlides");
+  const dots = document.getElementsByClassName("dot");
+
+  if (slides.length === 0) return;
+
+  if (n > slides.length) { slideIndex = 1; }
+  if (n < 1) { slideIndex = slides.length; }
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+
+  slides[slideIndex - 1].style.display = "block";
+  if (dots.length) dots[slideIndex - 1].className += " active";
+}
+
+/* === Otomatik geçiş === */
+function startAutoplay() {
+  if (autoplayInterval) return;
+  autoplayInterval = setInterval(() => {
+    plusSlides(1);                // sıradaki slayta geç
+  }, AUTOPLAY_MS);
+}
+
+function stopAutoplay() {
+  clearInterval(autoplayInterval);
+  autoplayInterval = null;
+}
+
+function restartAutoplay() {
+  stopAutoplay();
+  startAutoplay();
+}
+
+// Sayfa yüklendiğinde başlat
+startAutoplay();
+
+/* === Hover / touch üzerinde durdur (isteğe bağlı ama kullanıcı dostu) === */
+// Dış sarmalayıcıya id="slideshow" ver (mySlides'ları kapsayan eleman)
+const wrapper = document.getElementById("slideshow");
+if (wrapper) {
+  wrapper.addEventListener("mouseenter", stopAutoplay);
+  wrapper.addEventListener("mouseleave", startAutoplay);
+  // mobil: parmak değdiğinde dur, çekince devam et
+  wrapper.addEventListener("touchstart", stopAutoplay, {passive: true});
+  wrapper.addEventListener("touchend", startAutoplay);
+}
+
+    </script>
 
 
     <main>
