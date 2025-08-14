@@ -462,3 +462,12 @@ input[type=submit] {
 input[type=submit]:hover {
   cursor: pointer;
 }
+
+.contactSubmitText a{
+  text-decoration: underline;
+  color: antiquewhite;
+}
+
+.contactSubmitText {
+  margin-top: -15px;
+}
