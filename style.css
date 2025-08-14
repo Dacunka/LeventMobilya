@@ -11,6 +11,7 @@ body{
   background:linear-gradient(to bottom,#3C2F2F,#2E2E2E);
   margin:0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .nav{
@@ -143,14 +144,20 @@ footer li {
 
 /* Slideshow container */
 .slideshow-container {
+  width: 100%;
   max-width: 1000px;
   position: relative;
-  margin: auto;
+  margin: 0 auto;
+  overflow: hidden; /* İçerik taşmasın */
+  aspect-ratio: 16 / 9; /* Sabit oran */
+  background-color: #000; /* Yüklenme öncesi siyah arka plan */
 }
 
 /* Hide the images by default */
 .mySlides {
   display: none;
+  width: 100%;
+  height: 100%;
 }
 
 /* Next & previous buttons */
@@ -158,8 +165,8 @@ footer li {
   cursor: pointer;
   position: absolute;
   top: 50%;
+  transform: translateY(-50%);
   width: auto;
-  margin-top: -22px;
   padding: 16px;
   color: white;
   font-weight: bold;
@@ -167,15 +174,16 @@ footer li {
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
+  z-index: 5;
 }
 
-/* Position the "next button" to the right */
+/* Sağ buton */
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
+/* Hover efekti */
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
 }
@@ -189,18 +197,21 @@ footer li {
   bottom: 8px;
   width: 100%;
   text-align: center;
+  left: 0;
 }
 
-/* Number text (1/3 etc) */
+/* Number text */
 .numbertext {
   color: #f2f2f2;
   font-size: 12px;
   padding: 8px 12px;
   position: absolute;
   top: 0;
+  left: 0;
+  width: 100%;
 }
 
-/* The dots/bullets/indicators */
+/* Dots */
 .dot {
   cursor: pointer;
   height: 15px;
@@ -216,7 +227,7 @@ footer li {
   background-color: #717171;
 }
 
-/* Fading animation */
+/* Fade animation */
 .fade {
   animation-name: fade;
   animation-duration: 1.5s;
@@ -227,10 +238,22 @@ footer li {
   to {opacity: 1}
 }
 
-img {
+/* Görseller */
+.mySlides img {
   width: 100%;
-  height: 50%;
+  height: 100%;
+  object-fit: cover; /* Taşmadan kırp */
+  display: block;
 }
+
+/* Küçük ekran ayarı */
+@media (max-width: 600px) {
+  .prev, .next {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
 
 /**İndex**/
 
